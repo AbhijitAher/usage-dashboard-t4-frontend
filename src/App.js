@@ -15,7 +15,7 @@ function App() {
     axios
       .get(`https://usage-dashboard-chart.herokuapp.com/usage/${date}`)
       .then((res) => {
-        console.log('API Response', res.data.usageData)
+        // console.log('API Response', res.data.usageData)
         handleSetUsageData(res.data.usageData)
       })
       .catch((e) => {
