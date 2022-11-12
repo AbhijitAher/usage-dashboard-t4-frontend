@@ -14,7 +14,6 @@ import {
   PieController,
   LineController,
   PolarAreaController,
-  
   LogarithmicScale,
   RadialLinearScale,
   TimeScale,
@@ -50,18 +49,18 @@ ChartJS.register(
     Decimation,
     Filler,
     */
-   Legend,
-   SubTitle,
-   Tooltip,
-   Title,
+  Legend,
+  SubTitle,
+  Tooltip,
+  Title
 )
 
-export default function chart({ usageData }) {
+export default function chart({ usageData, label, yText }) {
   const data = {
     labels: usageData.labels,
     datasets: [
       {
-        label: 'Usage Stats in Minutes',
+        label: label,
         data: usageData.labelUsage,
         fill: false,
         backgroundColor: [
@@ -83,7 +82,6 @@ export default function chart({ usageData }) {
           'rgb(201, 203, 207)',
         ],
         borderWidth: 1,
-        
       },
     ],
   }
@@ -94,25 +92,28 @@ export default function chart({ usageData }) {
         beginAtZero: true,
         // display: false,
         ticks: {
-            display: true,
+          display: true,
         },
         title: {
-            display: true,
-            text: 'Usage in Minutes ',
-        }
+          display: true,
+          text: yText,
+        },
       },
       x: {
         title: {
-            display: true,
-            text: 'Host App',
-        }
-      }
+          display: true,
+          text: 'Host App',
+        },
+      },
     },
   }
 
   return (
     <div className="chart-div">
       <Bar data={data} options={options} />
+      <div className="text-center font-12">
+        You can hover on the bars to see the exact usage
+      </div>
     </div>
   )
 }

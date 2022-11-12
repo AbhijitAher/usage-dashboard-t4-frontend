@@ -4,14 +4,21 @@
   margin-top: 30px;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-#date{
+#date {
   margin-left: 15px;
 }
 
-.font-12{
-  font-size:12px;
+.font-12 {
+  margin: 10px 0px;
+  font-size: 12px;
+}
+
+.loading {
+  font-size: 20px;
+  color: gray;
+  margin: 40px 0;
 }
