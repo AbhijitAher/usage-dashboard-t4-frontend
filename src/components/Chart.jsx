@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chart, Bar } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 import {
   Chart as ChartJS,
   BarElement,
@@ -66,10 +66,10 @@ export default function chart() {
     'Skype-MicrosoftTeams',
     'Dropbox',
     'AmazonPrime',
-    // 'Facebook-Instagram',
-    // 'AppleMusic',
-    // 'Whatsapp',
-    // 'Youtube',
+    'Facebook-Instagram',
+    'AppleMusic',
+    'Whatsapp',
+    'Youtube',
   ]
 
   const data = {
@@ -77,16 +77,16 @@ export default function chart() {
     datasets: [
       {
         label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 45],
+        data: [65, 59, 80, 81, 56, 55, 45, 80, 81, 56, 55],
         fill: false,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 205, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(201, 203, 207, 0.2)',
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(255, 205, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(201, 203, 207, 0.6)',
         ],
         borderColor: [
           'rgb(255, 99, 132)',
