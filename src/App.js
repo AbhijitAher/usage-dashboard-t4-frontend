@@ -58,6 +58,7 @@ function App() {
         <h2>Welcome to your App usage Statistics</h2>
         <label htmlFor="date">Choose a date</label>
         <input type="date" name="date" id="date" onChange={handleDateChange} />
+        <h5>Note: There is valid data for Dates: 03/11/2022 and 04/11/2022</h5>
       </div>
 
       <Chart usageData={usageData} />
