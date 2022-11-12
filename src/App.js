@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useState } from 'react'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false)
   const [usageData, setUsageData] = useState(false)
 
   const handleDateChange = (event) => {
@@ -13,9 +12,8 @@ function App() {
   }
 
   const getData = (date) => {
-    setIsLoading(true)
     axios
-      .get(`http://localhost:3031/usage/${date}`)
+      .get(`https://usage-dashboard-chart.herokuapp.com/usage/${date}`)
       .then((res) => {
         console.log('API Response', res.data.usageData)
         handleSetUsageData(res.data.usageData)
@@ -23,7 +21,6 @@ function App() {
       .catch((e) => {
         console.log('Error', e)
       })
-    setIsLoading(false)
   }
 
   const handleSetUsageData = (data) => {
@@ -63,10 +60,7 @@ function App() {
         <input type="date" name="date" id="date" onChange={handleDateChange} />
       </div>
 
-      <div></div>
-      {/* {usageData != false  ? ( */}
       <Chart usageData={usageData} />
-      {/* ) : null} */}
     </div>
   )
 }

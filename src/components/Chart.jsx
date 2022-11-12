@@ -61,7 +61,7 @@ export default function chart({ usageData }) {
     labels: usageData.labels,
     datasets: [
       {
-        label: 'Usage Stats',
+        label: 'Usage Stats in Minutes',
         data: usageData.labelUsage,
         fill: false,
         backgroundColor: [
