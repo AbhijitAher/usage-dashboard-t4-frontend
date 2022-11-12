@@ -56,12 +56,13 @@ function App() {
     <div className="App">
       <div className="text-center">
         <h2>Welcome to your App usage Statistics</h2>
+        <h5>Note: There is valid data for Dates: 03/11/2022 and 04/11/2022</h5>
         <label htmlFor="date">Choose a date</label>
         <input type="date" name="date" id="date" onChange={handleDateChange} />
-        <h5>Note: There is valid data for Dates: 03/11/2022 and 04/11/2022</h5>
       </div>
 
       <Chart usageData={usageData} />
+        <div className="text-center font-12">You can hover on the bars to see the exact usage in minutes</div>
       
     </div>
   )
