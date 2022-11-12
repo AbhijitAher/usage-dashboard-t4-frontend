@@ -14,8 +14,7 @@ import {
   PieController,
   LineController,
   PolarAreaController,
-  RadarController,
-  ScatterController,
+  
   LogarithmicScale,
   RadialLinearScale,
   TimeScale,
@@ -31,7 +30,7 @@ import {
 ChartJS.register(
   BarElement,
   LinearScale,
-  CategoryScale
+  CategoryScale,
   /*
     BarController,
     ArcElement,
@@ -50,34 +49,20 @@ ChartJS.register(
     TimeSeriesScale,
     Decimation,
     Filler,
-    Legend,
-    Title,
-    Tooltip,
-    SubTitle
     */
+   Legend,
+   SubTitle,
+   Tooltip,
+   Title,
 )
 
-export default function chart() {
-  const labels = [
-    'Other',
-    'Netflix',
-    'Slack',
-    'Hotstar',
-    'Skype-MicrosoftTeams',
-    'Dropbox',
-    'AmazonPrime',
-    'Facebook-Instagram',
-    'AppleMusic',
-    'Whatsapp',
-    'Youtube',
-  ]
-
+export default function chart({ usageData }) {
   const data = {
-    labels: labels,
+    labels: usageData.labels,
     datasets: [
       {
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 45, 80, 81, 56, 55],
+        label: 'Usage Stats',
+        data: usageData.labelUsage,
         fill: false,
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
@@ -98,6 +83,7 @@ export default function chart() {
           'rgb(201, 203, 207)',
         ],
         borderWidth: 1,
+        
       },
     ],
   }
@@ -106,13 +92,27 @@ export default function chart() {
     scales: {
       y: {
         beginAtZero: true,
+        // display: false,
+        ticks: {
+            display: true,
+        },
+        title: {
+            display: true,
+            text: 'Usage in Minutes ',
+        }
       },
+      x: {
+        title: {
+            display: true,
+            text: 'Host App',
+        }
+      }
     },
   }
 
   return (
     <div className="chart-div">
-      <Bar height={100} data={data} options={options} />
+      <Bar data={data} options={options} />
     </div>
   )
 }
