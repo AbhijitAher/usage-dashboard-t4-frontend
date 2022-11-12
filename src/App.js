@@ -61,6 +61,7 @@ function App() {
       </div>
 
       <Chart usageData={usageData} />
+      <h5>Note: There is valid data for Dates: 03/11/2022 and 04/11/2022</h5>
     </div>
   )
 }
