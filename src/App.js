@@ -62,8 +62,9 @@ function App() {
       </div>
 
       <Chart usageData={usageData} />
-        <div className="text-center font-12">You can hover on the bars to see the exact usage in minutes</div>
-      
+      <div className="text-center font-12">
+        You can hover on the bars to see the exact usage in minutes
+      </div>
     </div>
   )
 }
